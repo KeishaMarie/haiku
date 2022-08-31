@@ -1,5 +1,5 @@
 {
-  "name": "env",
+  "name": "haiku",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,5 +28,7 @@
     "webpack-dev-server": "3.11.3"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^4.5.3",
+    "syllable": "^5.0.0"
   }
+}
