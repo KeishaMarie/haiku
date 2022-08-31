@@ -1,4 +1,6 @@
-export class Haiku {
+import {syllable} from './index.js';
+
+export default class Haiku {
   constructor(haikuInput) {
     this.haikuInput = haikuInput;
     this.lines = {};
@@ -10,6 +12,11 @@ export class Haiku {
     this.lines[1] = haikuArray[1];
     this.lines[2] = haikuArray[2];
     return haikuArray
+  }
+
+  syllableChecker() {
+  let line1Syllable = syllable(this.lines[0]);
+  return line1Syllable
   }
 
 

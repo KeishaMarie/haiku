@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-
+//import {Haiku} from './scripts.js';
 import {syllable} from 'syllable';
 
 syllable('syllable') // 3

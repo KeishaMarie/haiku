@@ -18,7 +18,9 @@ describe('Haiku', () => {
 
   test('should assign key-value pairs to the haiku object line property', () => {
     expect(haiku.lines[0]).toEqual("An old pond!");
-  }); 
+  });
+
+  test('should ') 
 });
 
 
