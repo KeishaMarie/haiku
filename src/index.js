@@ -5,36 +5,44 @@ import Haiku from './scripts.js';
 import {syllable} from 'syllable'
 
 syllable('syllable') // 3
-syllable('unicorn') // 3
-syllable('hi') // 1
-syllable('hihi') // 2
-syllable('mmmmmmmmmmmmmmmm') // 1
-syllable('wine') // 1
-syllable('bottle') // 2
-syllable('wine-bottle') // 3
-syllable('Åland') // 2
-console.log(syllable('syllable'));
 
 const handleFormSubmission = (event) => {
 event.preventDefault();
+
+const warning = document.getElementById("warning");
 lineChecker();
+warning.innerText = "";
+syllableChecker(lineChecker());
 };
+
+const syllableChecker = (lineChecker) => {
+  let syllablesLine1 = syllable(lineChecker.lines[0]);
+  let syllablesLine2 = syllable(lineChecker.lines[1]);
+  let syllablesLine3 = syllable(lineChecker.lines[2]);
+  const warning = document.getElementById("warning");
+  if (syllablesLine1 != 5) {
+    warning.append("Your first line needs to have 5 syllables.") 
+  } if (syllablesLine2 != 7) {
+      warning.append("Your second line needs to have 7 syllables.")
+  } if (syllablesLine3 != 5) {
+      warning.append("Your third line needs to have 5 syllables.")
+  }
+
+  };
 
 const lineChecker = () => {
   let haikuInput = document.getElementById("haiku-text").value;
-  console.log(haikuInput)
   let newHaiku = new Haiku(haikuInput);
-  console.log(newHaiku)
   newHaiku.assignLineKeys();
-  console.log(typeof newHaiku.lines[2])
   const warning = document.getElementById("warning");
   if (newHaiku.lines[3]) {
     warning.append("There are too many lines in this haiku!")
   } else if (!newHaiku.lines[0] | !newHaiku.lines[1] | !newHaiku.lines[2]) {
     warning.append("There are not enough lines in this haiku!")
   } else {
-    warning.append("Great job! You made a haiku!")
+    warning.append("Your haiku has the correct amount of lines - great job!")
   }
+  return newHaiku;
 };
 
 const form = document.getElementById("haiku-form");
