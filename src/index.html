@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <title>Haiku</title>
 </head>
 <body>
-  <h1>New Document</h1>
-  <script type="text/javascript" src="bundle.js"></script>
+  <div class="container">
+    <div class="card">
+      <h1>Haiku Checker</h1>
+      <form id="haiku-form">
+        <label for="haiku-text">Enter your Haiku:</label><br>
+        <textarea id="haiku-text" rows="5" cols="40">
+        </textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="response"></div>
+    </div>
+  </div>
+  <div>
+    <p id="warning"></p>
+  </div>
 </body>
 </html>

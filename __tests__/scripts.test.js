@@ -22,15 +22,3 @@ describe('Haiku', () => {
 
   test('should ') 
 });
-
-
-/*
-import lineNumberChecker from './../src/scripts.js';
-
-describe('lineNumberChecker' () => {
-  test('should output a number that is equal to the number of lines in haikuInput', () => {
-    const haikuInput = 3;
-    expect()
-  })
-})
-*/
